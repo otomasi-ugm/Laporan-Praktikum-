@@ -1,0 +1,123 @@
+% Template laporan ini dibuat dengan harapan untuk standardisasi laporan praktikum pada lingkungan DTEDI SV UGM, agar semua laporan praktikum konsisten secara format dan hasil cetak laporan menjadi rapi.
+
+% Saran dan perbaikan sangat diperlukan agar template ini dapat digunakan oleh semua orang. Bila ada saran, silahkan hubungi: fahmizal@ugm.ac.id
+
+\documentclass[12 pt]{article}
+\usepackage[a4paper, total={6.2in, 9in}]{geometry}
+% \usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{indentfirst}
+\usepackage{subfiles}
+\usepackage{tocloft}
+
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+\renewcommand \thesection{\Roman{section}}
+\renewcommand \thesubsection{\arabic{section}.\arabic{subsection}}
+\renewcommand \thesubsubsection{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+\renewcommand \figurename{Gambar}
+\renewcommand \thefigure {\arabic{section}.\arabic{figure} } %kustom nomor gambar dengan format (section.subsection.urutan_figure)
+\renewcommand \tablename{Tabel}
+\renewcommand \thetable {\arabic{section}.\arabic{subsection}.\arabic{table} } %kustom nomor tabel dengan format (section.subsection.urutan_tabel)
+\renewcommand \theequation{\arabic{section}.\arabic{equation}} %kustom pemomoran persamaan matematika (section.urutan_persamaan)
+\setlength{\tabcolsep}{10pt} %kustom spacing coloumn tabel (default = 6pt)
+\renewcommand{\arraystretch}{1.5} %kustom spacing row tabel (default = 1)
+
+\renewcommand \contentsname {Daftar Isi}
+\renewcommand \listfigurename {Daftar Gambar}
+\renewcommand \refname {Daftar Pustaka}
+
+\renewcommand{\cfttoctitlefont}{\hspace*{\fill}\Large\bfseries}
+\renewcommand{\cftaftertoctitle}{\hspace*{\fill}}
+\renewcommand{\cftlottitlefont}{\hspace*{\fill}\Large\bfseries}
+\renewcommand{\cftafterlottitle}{\hspace*{\fill}}
+\renewcommand{\cftloftitlefont}{\hspace*{\fill}\Large\bfseries}
+\renewcommand{\cftafterloftitle}{\hspace*{\fill}}
+
+\newcommand{\ffrac}[2]{\ensuremath{\frac{\displaystyle #1}{\displaystyle #2}}}
+
+%---------------------------------------------% listing style
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{custom}{
+    frame = single,
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=6pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=custom}
+%---------------------------------------------%
+
+\title{\large \textbf{LAPORAN PRAKTIKUM TEKNIK KENDALI LANJUT} \\ \textbf{UNIT 4 : PEMODELAN DAN IDENTIFIKASI SISTEM }\linebreak}
+\author{}
+\date{}
+\onehalfspacing
+\pgfplotsset{compat = newest}
+
+\begin{document}
+
+\clearpage
+\maketitle
+\thispagestyle{empty} %menghapus penomoran pada cover
+
+\begin{center}
+\includegraphics[width=5cm,height=5cm]{logo_ugm.png}
+\end{center}
+
+\vspace{1 cm}
+
+\begin{center}
+	\begin{tabular}{lcl}
+		Nama & : & .......... \\
+		NIM & : & ..........\\
+		Kelas & : & TRIK AB\\
+		Tanggal & : & 14 Februari 2024 \\
+		Dosen Pengampu & : & Dr. Fahmizal, S.T., M.Sc.
+	\end{tabular}
+	\newline
+	\newline
+	\newline
+	\newline
+	\newline
+	
+	\normalsize{\textbf{PROGRAM STUDI SARJANA TERAPAN (D-4) }} \\
+	\textbf{TEKNOLOGI REKAYASA INSTRUMENTASI DAN KONTROL} \\
+	\textbf{DEPARTEMEN TEKNIK ELEKTRO DAN INFORMATIKA} \\
+	\textbf{SEKOLAH VOKASI UNIVERSITAS GADJAH MADA} \\
+	\textbf{2024}
+\end{center}
+
+\pagebreak
+\tableofcontents
+\pagebreak
+\listoffigures
+\pagebreak
+
+\subfile{content.tex}
+
+\end{document}
